@@ -9,8 +9,12 @@ public class Range implements IntegerSequence{
     this.end = end;
    }
 
-  public void reset(){  }
-  public int length(){  }
+  public void reset(){
+
+    }
+  public int length(){
+    return start - end;
+  }
 
   //When current is no longer a valid element in the range, it should return false.
   public boolean hasNext(){  }
