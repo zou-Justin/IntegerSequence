@@ -14,11 +14,11 @@ public class Range implements IntegerSequence{
     current = start;
   }
   public int length(){
-    return start - end + 1;
+    return (end - start) + 1;
   }
 
   //When current is no longer a valid element in the range, it should return false.
-  public boolean hasNext() throws NoSuchElementException{
+  public boolean hasNext(){
     if (current == end +1){
       return false;
     }
@@ -29,13 +29,11 @@ public class Range implements IntegerSequence{
   //This will return the current value, it will also increase current value by 1.
   //e.g.  if current is 5. This will make current 6, and return 5.
   public int next(){
+    if (hasNext() == false){
+      throw new NoSuchElementException("bad");
+    }
     int now = current;
     current += 1;
-    try {
-      if (hasNext() == false);
-    }
-    catch (NoSuchElementException e){
-    }
     return now;
   }
 
