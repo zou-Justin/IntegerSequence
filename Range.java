@@ -18,7 +18,7 @@ public class Range implements IntegerSequence{
   }
 
   //When current is no longer a valid element in the range, it should return false.
-  public boolean hasNext(){
+  public boolean hasNext() throws NoSuchElementException{
     if (current == end +1){
       return false;
     }
@@ -31,7 +31,8 @@ public class Range implements IntegerSequence{
   public int next(){
     int now = current;
     current += 1;
-    return now; 
+
+    return now;
   }
 
 }
