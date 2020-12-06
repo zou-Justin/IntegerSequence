@@ -10,8 +10,8 @@ public class Range implements IntegerSequence{
    }
 
   public void reset(){
-
-    }
+    current = start;
+  }
   public int length(){
     return start - end;
   }
