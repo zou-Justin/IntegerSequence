@@ -7,6 +7,7 @@ public class Range implements IntegerSequence{
   public Range(int start,  int end){
     this.start = start;
     this.end = end;
+    current = start;
    }
 
   public void reset(){
@@ -18,12 +19,19 @@ public class Range implements IntegerSequence{
 
   //When current is no longer a valid element in the range, it should return false.
   public boolean hasNext(){
-    if (current == end +1)
+    if (current == end +1){
+      return false;
+    }
+    return true;
    }
 
   //@throws NoSuchElementException when hasNext() is false.
   //This will return the current value, it will also increase current value by 1.
   //e.g.  if current is 5. This will make current 6, and return 5.
-  public int next(){    }
+  public int next(){
+    int now = current;
+    current += 1;
+    return now; 
+  }
 
 }
