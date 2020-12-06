@@ -31,7 +31,11 @@ public class Range implements IntegerSequence{
   public int next(){
     int now = current;
     current += 1;
-
+    try {
+      if (hasNext() == false);
+    }
+    catch (NoSuchElementException e){
+    }
     return now;
   }
 
