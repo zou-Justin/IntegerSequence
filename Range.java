@@ -4,7 +4,10 @@ public class Range implements IntegerSequence{
 
   //@param start : the starting value (inclusive) which must be <= end.
   //@param end : the ending value which is also inclusive.
-  public Range(int start,  int end){  }
+  public Range(int start,  int end){
+    this.start = start;
+    this.end = end;
+   }
 
   public void reset(){  }
   public int length(){  }
