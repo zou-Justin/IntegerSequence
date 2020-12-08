@@ -18,7 +18,7 @@ public class ArraySequence implements IntegerSequence{
     {
        data[i] = otherseq.next();
      }
-
+a;
 
    }
   public boolean hasNext(){
