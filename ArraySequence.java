@@ -12,6 +12,15 @@ public class ArraySequence implements IntegerSequence{
      }
     currentIndex = 0;
   }
+  public ArraySequence(IntegerSequence otherseq){
+    data = new int[otherseq.length()];
+    for (int i = 0; i < otherseq.length() && hasNext();i++)
+    {
+       data[i] = otherseq.next();
+     }
+
+
+   }
   public boolean hasNext(){
     if (currentIndex > data.length -1){
       return false;
