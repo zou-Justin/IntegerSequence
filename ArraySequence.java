@@ -14,14 +14,15 @@ public class ArraySequence implements IntegerSequence{
   }
   public ArraySequence(IntegerSequence otherseq){
     data = new int[otherseq.length()];
-    for (int i = 0; i < otherseq.length() && hasNext();i++)
+    for (int i = 0; i < otherseq.length();i++)
     {
+      if (otherseq.hasNext())
        data[i] = otherseq.next();
-     }
-
+    }
+    otherseq.reset();
    }
   public boolean hasNext(){
-    if (currentIndex > data.length -1){
+    if (currentIndex > data.length-1){
       return false;
     }
     return true;
@@ -30,11 +31,9 @@ public class ArraySequence implements IntegerSequence{
     if (hasNext() == false){
       throw new NoSuchElementException("bad");
     }
-    else{
     int temp = currentIndex;
-    currentIndex++;
+    currentIndex += 1;
     return data[temp];
-    }
   }
   public int length(){
     return data.length;
